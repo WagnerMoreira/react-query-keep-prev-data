@@ -9,5 +9,17 @@ export function getTodos(page) {
 }
 
 export const postTodo = (data) =>
-  fetcher("items", { method: "POST", body: JSON.stringify(data) });
+  fetcher("items", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: { "Content-type": "application/json" },
+  });
+
+export const updateTodo = (data, id) =>
+  fetcher(`items/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: { "Content-type": "application/json" },
+  });
+
 export const deleteTodo = (id) => fetcher(`items/${id}`, { method: "DELETE" });
