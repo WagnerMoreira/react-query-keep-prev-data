@@ -72,10 +72,7 @@ function Todos() {
       </div>
 
       <div className="pagination">
-        <button
-          onClick={() => setPage((old) => Math.max(old - 1, 1))}
-          disabled={page === 1}
-        >
+        <button onClick={() => setPage((old) => old - 1)} disabled={page === 1}>
           Previous Page
         </button>
         <span>Current Page: {page}</span>
